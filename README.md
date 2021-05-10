@@ -1,7 +1,7 @@
 # COVID19-India Data
  This project focuses on Data-Analysis and Visualization of Covid 19 using python lib such as pandas, numpy,  matplotlib, seaborn. Futher you can vizualize data from the link below. I have also included a Jupyter notebook with the code for the same. 
 ## Web based Data Visualization
-To view the latest Covid-19 Statistics in INDIA [click here](https://divyansh1110.github.io/COVID-19-Data-Analysis-and-Visualization/)
+To view the latest Covid-19 Statistics in INDIA [click here](https://divyansh1110.github.io/Covid-19-Data-Analysis-and-Visualization/)
 
 ## Data 
 The data used in this project is provided by [covid19india.org](https://www.covid19india.org/)  . The data can be also found in there [GitHub Repo](https://github.com/covid19india/api)  as csv and JSON.
