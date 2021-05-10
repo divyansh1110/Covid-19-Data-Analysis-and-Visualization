@@ -11,7 +11,5 @@ gunicorn==19.9.0
 html5lib==1.0.1
 idna==2.8
 ipython-genutils==0.2.0
-itsdangerous==1.1.0
-pandas==0.24.2
 plotly==4.1.0
 pytz==2019.1
