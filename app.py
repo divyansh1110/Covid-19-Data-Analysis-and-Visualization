@@ -1,19 +1,16 @@
-from dash_html_components.H2 import H2
-from dash_html_components.P import P
 import pandas as pd
 import dash
 import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output, State
-from jupyter_dash import JupyterDash
 import plotly.graph_objects as go
 import plotly.express as px
 from dash import no_update
 
 # Create a dash application
-app = JupyterDash(__name__)
-JupyterDash.infer_jupyter_proxy_config()
-app.config.suppress_callback_exceptions = True
+app = dash.Dash(__name__)
+server = app.server
+
 
 link='https://api.covid19india.org/csv/latest/state_wise_daily.csv'
 total_state_wise_daily =  pd.read_csv(link)
