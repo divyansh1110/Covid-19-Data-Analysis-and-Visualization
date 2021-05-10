@@ -43,8 +43,8 @@ def df(state):
 
 # Application layout
 app.layout = html.Div(children=[ 
-                                 html.H1('Covid-19 Data Analysis and Visualization', 
-                                 style={'textAlign': 'center', 'color': '#503D36','font-size': 24}),
+                                #  html.H1('Covid-19 Data Analysis and Visualization', 
+                                #  style={'textAlign': 'center', 'color': '#503D36','font-size': 24}),
                                  
                                  html.H2('Daily covid cases'),
                                  html.P('Please select the state you want to view data of:- '),
