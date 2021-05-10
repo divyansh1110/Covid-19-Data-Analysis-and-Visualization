@@ -105,4 +105,4 @@ def get_graph(state):
 
 # Run the app
 if __name__ == '__main__': 
-    app.run_server(mode="inline", host="localhost", debug=False, dev_tools_ui=False, dev_tools_props_check=False)
+    app.run_server()
