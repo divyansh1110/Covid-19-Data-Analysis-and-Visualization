@@ -10,7 +10,7 @@ from dash import no_update
 # Create a dash application
 app = dash.Dash(__name__)
 server = app.server
-
+app.title="Covid 19 "
 
 link='https://api.covid19india.org/csv/latest/state_wise_daily.csv'
 total_state_wise_daily =  pd.read_csv(link)
