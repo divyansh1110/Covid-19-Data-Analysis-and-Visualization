@@ -46,7 +46,7 @@ app.layout = html.Div(children=[
                                 #  html.H1('Covid-19 Data Analysis and Visualization', 
                                 #  style={'textAlign': 'center', 'color': '#503D36','font-size': 24}),
                                  
-                                 html.H2('Daily covid cases'),
+                                 html.H2('Daily covid cases',id='main'),
                                  html.P('Please select the state you want to view data of:- '),
                 
                                 html.Div([
