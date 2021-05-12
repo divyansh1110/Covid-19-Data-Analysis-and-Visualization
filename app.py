@@ -14,8 +14,8 @@ app = dash.Dash(__name__)
 server = app.server
 app.title="Covid 19"
 
-total_state_wise_daily_link='https://api.covid19india.org/csv/latest/state_wise_daily.csv'
-total_state_wise_daily =  pd.read_csv(total_state_wise_daily_link)
+link='https://api.covid19india.org/csv/latest/state_wise_daily.csv'
+total_state_wise_daily =  pd.read_csv(link)
 
 
 header= ['date','Date','Status','Total','Andaman and Nicobar Islands','Andhra Pradesh','Arunachal Pradesh','Assam','Bihar',
@@ -25,15 +25,6 @@ header= ['date','Date','Status','Total','Andaman and Nicobar Islands','Andhra Pr
  'Uttar Pradesh','Uttarakhand','West Bengal','Unknown']
 
 total_state_wise_daily.columns=header
-
-
-total_states_wise_link='https://api.covid19india.org/csv/latest/state_wise.csv'
-total_state_wise =  pd.read_csv(total_states_wise_link)
-
-total_state_wise.drop(columns=['Last_Updated_Time', 'Migrated_Other','State_code','Delta_Confirmed','Delta_Recovered','Delta_Deaths','State_Notes'],inplace=True)
-total_state_wise.drop([0],inplace=True)
-
-
 
 state_list=[ 'Andaman and Nicobar Islands', 'Andhra Pradesh',  'Arunachal Pradesh','Assam','Bihar','Chandigarh','Chhattisgarh','Dadra and Nagar Haveli',
  'Daman and Diu','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Ladakh',
@@ -54,19 +45,19 @@ def df(state):
 
 # Application layout
 app.layout = html.Div(children=[ 
-                                
-                                 html.H2('Daily covid cases',id='main color'),
-                                 html.P('Please select the state you want to view data of:- ',id="color"),
+                                 html.H2('Daily covid cases',id="color"),
+                                 html.P('Please select the state you want to view data of:- '),
                 
-                            
-                                    html.Div([ 
-                                        html.Div([ html.H2('State:', id="color")]),
+                                html.Div([
+                                    html.Div([ html.Div([ html.H2('State:', style={'margin-right': '2em'})]),
                                                            dcc.Dropdown(id='state-type', 
                                                                         options=[{'label': i, 'value': i} for i in state_list],
                                                                         placeholder="Select state ",
                                                                         style={'width':'80%', 'padding':'3px', 'font-size': '20px', 'text-align-last' : 'center'}), 
-                                              ], style={'display':'flex'}),
-                                              
+                                             ], style={'display':'flex'})
+                                    
+                                         ]),
+
                                 html.Div([
                                         html.Div([ ], id='coun'),
                                          ]),
@@ -110,4 +101,5 @@ def get_graph(state):
 
 # Run the app
 if __name__ == '__main__': 
+    # REVIEW8: Adding dev_tools_ui=False, dev_tools_props_check=False can prevent error appearing before calling callback function
     app.run_server()
