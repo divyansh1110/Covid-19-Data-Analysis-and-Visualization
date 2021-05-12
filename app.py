@@ -66,14 +66,7 @@ app.layout = html.Div(children=[
                                                                         placeholder="Select state ",
                                                                         style={'width':'80%', 'padding':'3px', 'font-size': '20px', 'text-align-last' : 'center'}), 
                                               ], style={'display':'flex'}),
-                                    
-                                         
-                            html.Div([
-                                 dash_table.DataTable(id='table',
-                                                      columns=[{"name": i, "id": i} for i in total_state_wise.columns],
-                                                        data=total_state_wise.to_dict('records'),
-                                                      )],id='table_div'),
-
+                                              
                                 html.Div([
                                         html.Div([ ], id='coun'),
                                          ]),
